@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "docgraph": {
+      "command": "docgraph",
+      "args": ["mcp", "--data", ".docgraph"]
+    }
+  }
+}

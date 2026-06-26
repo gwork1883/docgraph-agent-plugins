@@ -1,0 +1,43 @@
+{
+  "name": "docgraph",
+  "version": "0.1.0",
+  "description": "Local-first DocGraph MCP integration for enterprise documents and local agents.",
+  "author": {
+    "name": "gwork1883",
+    "url": "https://github.com/gwork1883"
+  },
+  "homepage": "https://github.com/gwork1883/docgraph-agent-plugins/tree/main/plugins/docgraph",
+  "repository": "https://github.com/gwork1883/docgraph-agent-plugins",
+  "license": "MIT",
+  "keywords": [
+    "docgraph",
+    "mcp",
+    "local-first",
+    "enterprise-documents",
+    "agent",
+    "codex"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DocGraph",
+    "shortDescription": "Use local DocGraph documents through MCP.",
+    "longDescription": "Connects Codex to a local DocGraph HTTP MCP endpoint so Codex can search and reason over workspace-controlled enterprise document indexes without the plugin uploading documents to a SaaS service.",
+    "developerName": "gwork1883",
+    "category": "Productivity",
+    "capabilities": ["MCP"],
+    "websiteURL": "https://github.com/gwork1883/docgraph",
+    "defaultPrompt": [
+      "Search my local DocGraph docs.",
+      "Find related docs in DocGraph.",
+      "Summarize this topic from DocGraph."
+    ],
+    "brandColor": "#2563EB",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "screenshots": [
+      "./assets/docgraph-dashboard.png",
+      "./assets/docgraph-connectors.png",
+      "./assets/docgraph-search.png"
+    ]
+  }
+}

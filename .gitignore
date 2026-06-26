@@ -1,0 +1,43 @@
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+.cache/
+
+# Node/package manager output for local tooling
+node_modules/
+dist/
+build/
+coverage/
+.nyc_output/
+
+# DocGraph local runtime state
+.docgraph/
+.docgraph-test/
+docgraph.yaml
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Codex local workspace state
+.codex/
