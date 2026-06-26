@@ -1,0 +1,21 @@
+{
+  "name": "docgraph-agent-plugins",
+  "interface": {
+    "displayName": "DocGraph Agent Plugins"
+  },
+  "plugins": [
+    {
+      "name": "docgraph",
+      "source": {
+        "source": "local",
+        "path": "./plugins/docgraph"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
+

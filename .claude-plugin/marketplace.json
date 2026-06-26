@@ -1,0 +1,15 @@
+{
+  "name": "docgraph-agent-plugins",
+  "description": "Local DocGraph plugins for Claude Code and agent workflows.",
+  "owner": {
+    "name": "gwork1883"
+  },
+  "plugins": [
+    {
+      "name": "docgraph",
+      "source": "./plugins/docgraph",
+      "description": "Local-first DocGraph MCP integration for enterprise documents and local agents.",
+      "category": "productivity"
+    }
+  ]
+}

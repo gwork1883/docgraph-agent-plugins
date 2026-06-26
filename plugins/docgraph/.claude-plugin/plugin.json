@@ -1,0 +1,19 @@
+{
+  "name": "docgraph",
+  "version": "0.1.0",
+  "description": "Local-first DocGraph MCP integration for enterprise documents and local agents.",
+  "author": {
+    "name": "gwork1883",
+    "url": "https://github.com/gwork1883"
+  },
+  "homepage": "https://github.com/gwork1883/docgraph-agent-plugins/tree/main/plugins/docgraph",
+  "repository": "https://github.com/gwork1883/docgraph-agent-plugins",
+  "license": "MIT",
+  "keywords": [
+    "docgraph",
+    "mcp",
+    "claude-code",
+    "local-first",
+    "enterprise-documents"
+  ]
+}
