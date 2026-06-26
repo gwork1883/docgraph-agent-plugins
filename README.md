@@ -14,6 +14,10 @@ The first release is intentionally simple: install the DocGraph CLI yourself, ma
 
 ```text
 docgraph-agent-plugins/
+  .codex-plugin/plugin.json      # Codex submission artifact manifest
+  .mcp.json                      # Default HTTP MCP config for artifact submission
+  .mcp.stdio.json                # Optional stdio fallback config
+  assets/                        # Icon and DocGraph UI screenshots for submission
   plugins/docgraph/              # Shared plugin package
     .mcp.json                    # Claude Code and Codex HTTP MCP config
     .mcp.stdio.json              # Optional stdio fallback config
@@ -24,6 +28,11 @@ docgraph-agent-plugins/
   .claude-plugin/marketplace.json
   docs/
 ```
+
+The repository root is a valid Codex plugin artifact root. If a submission form
+expects `.codex-plugin/plugin.json` at the artifact root, submit this repository
+root or an archive created from it. The `plugins/docgraph` copy is retained for
+repo-local marketplace installs and Claude Code plugin compatibility.
 
 ## Install DocGraph CLI
 
@@ -87,7 +96,9 @@ TODO: Before publishing, verify the current Claude Plugin Hub submission and mar
 
 ## Install The Codex Plugin
 
-The Codex plugin package is also in `plugins/docgraph`.
+For local marketplace testing, the Codex plugin package is in `plugins/docgraph`.
+For artifact submission, the repository root also contains the required
+`.codex-plugin/plugin.json` and matching root assets.
 
 The repo-level Codex marketplace file is:
 
@@ -96,6 +107,13 @@ The repo-level Codex marketplace file is:
 ```
 
 Install or add this marketplace in Codex according to the current Codex plugin workflow, then enable the `docgraph` plugin. The plugin manifest points Codex to `./.mcp.json`, which connects to `http://127.0.0.1:8787/mcp`.
+
+To create a submission archive whose root contains `.codex-plugin/plugin.json`:
+
+```sh
+git archive --format=zip --output docgraph-codex-plugin.zip HEAD
+unzip -l docgraph-codex-plugin.zip | head -30
+```
 
 ## Verify MCP Tools
 

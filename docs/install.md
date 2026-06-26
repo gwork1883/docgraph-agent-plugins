@@ -54,6 +54,19 @@ http://127.0.0.1:8787/mcp
 
 Codex should connect to the already-running DocGraph HTTP MCP endpoint when the plugin is active. The plugin should not require a cloud DocGraph account for local document access.
 
+For Codex artifact submission, use the repository root. It contains the required
+`.codex-plugin/plugin.json`, `.mcp.json`, and `assets/` files. Do not upload only
+the parent of this repository, and do not upload an archive that nests the
+plugin under an extra top-level directory.
+
+```sh
+python3 /root/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py .
+git archive --format=zip --output docgraph-codex-plugin.zip HEAD
+unzip -l docgraph-codex-plugin.zip | head -30
+```
+
+The archive listing should include `.codex-plugin/plugin.json` at the root.
+
 ## Local Test Commands
 
 Run these commands from this repository checkout.
@@ -74,6 +87,7 @@ Start a new Claude Code session from the same shell and ask it to list or use th
 
 ```sh
 docgraph serve --data .docgraph --host 127.0.0.1 --port 8787
+python3 /root/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py .
 python3 /root/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/docgraph
 codex plugin marketplace add .
 codex plugin add docgraph@docgraph-agent-plugins
